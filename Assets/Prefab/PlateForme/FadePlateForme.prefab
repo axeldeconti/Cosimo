@@ -70,8 +70,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dace26daff37474ba67068cb3c6bb01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprite: {fileID: 7527319950167233135}
   PlateForme: {fileID: 7527319950000888547}
-  PlateFormCollider: {fileID: 7527319950000888545}
   PlateFormeCoolDown: 2
 --- !u!1 &7527319950000888547
 GameObject:
