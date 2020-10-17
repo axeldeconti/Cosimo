@@ -10,6 +10,9 @@ public class PlayerMove : MonoBehaviour
     public float Jumpforce;
 
     public bool OnGround;
+    public bool OnWall;
+
+    float CircleCastOffset;
 
     public float CircleRadius;
     public LayerMask GroundLayer;
@@ -27,7 +30,8 @@ public class PlayerMove : MonoBehaviour
 
     public void CheckCollision()
 	{
-        OnGround = Physics2D.OverlapCircle((Vector2)transform.position, CircleRadius,GroundLayer);
+        OnGround = Physics2D.OverlapCircle(transform.position, CircleRadius,GroundLayer);
+        OnGround = Physics2D.OverlapCircle(transform.position, CircleRadius,GroundLayer);
     }
 
     public float GetXInput()
