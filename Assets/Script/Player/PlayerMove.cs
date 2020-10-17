@@ -59,7 +59,7 @@ public class PlayerMove : MonoBehaviour
 
     public void WalkInDirection(Vector2 dir)
 	{
-        RB.velocity += new Vector2(dir.x * Speed,GetVelocity().y);
+        RB.velocity = new Vector2(dir.x * Speed,GetVelocity().y);
 	}
 
     public Vector3 GetVelocity()
