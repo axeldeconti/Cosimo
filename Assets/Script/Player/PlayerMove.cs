@@ -22,18 +22,14 @@ public class PlayerMove : MonoBehaviour
     public float CircleRadius;
     public LayerMask GroundLayer;
 
-    float TimeHoldingSpace;
-
     public float FallMultiplier;
     public float LowJumpMultiplier;
 
-    public bool IsLiving;
+
 
     // Update is called once per frame
     void Update()
     {
-        if (IsLiving)
-        {
             WalkInDirection(GetDirectionToWalk());
             CheckCollision();
             if (Input.GetKeyDown(KeyCode.Space) && OnGround)
@@ -41,8 +37,7 @@ public class PlayerMove : MonoBehaviour
                 Jump();
                 OnGround = false;
             }
-            BetterJump();
-        }
+            BetterJump();s
     }
 
     public void BetterJump()
