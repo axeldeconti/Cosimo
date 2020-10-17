@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -25,42 +23,46 @@ public class PlayerMove : MonoBehaviour
     public float FallMultiplier;
     public float LowJumpMultiplier;
 
+    private int _side = 1;
 
 
     // Update is called once per frame
     void Update()
     {
-            WalkInDirection(GetDirectionToWalk());
-            CheckCollision();
-            if (Input.GetKeyDown(KeyCode.Space) && OnGround)
-            {
-                Jump();
-                OnGround = false;
-            }
-            BetterJump();
+        WalkInDirection(GetDirectionToWalk());
+        CheckCollision();
+        if (Input.GetKeyDown(KeyCode.Space) && OnGround)
+        {
+            Jump();
+            OnGround = false;
+        }
+        BetterJump();
+
+        if (Mathf.Abs(RB.velocity.x) > 0.1f)
+            UpdateFlip(RB.velocity.x);
     }
 
     public void BetterJump()
-	{
-        if(RB.velocity.y < 0)
-		{
+    {
+        if (RB.velocity.y < 0)
+        {
             RB.velocity += Vector2.up * Physics2D.gravity.y * (FallMultiplier - 1) * Time.deltaTime;
-		}
-        else if(RB.velocity.y > 0 && !Input.GetKey(KeyCode.Space))
-		{
+        }
+        else if (RB.velocity.y > 0 && !Input.GetKey(KeyCode.Space))
+        {
             RB.velocity += Vector2.up * Physics2D.gravity.y * (LowJumpMultiplier - 1) * Time.deltaTime;
         }
-	}
+    }
 
     public void CheckCollision()
-	{
-        OnGround = Physics2D.OverlapCircle(transform.position + (Vector3.up * BottomOffset), CircleRadius,GroundLayer);
-        OnWallRight = Physics2D.OverlapCircle(transform.position + (Vector3.right * RightOffset), CircleRadius,GroundLayer);
+    {
+        OnGround = Physics2D.OverlapCircle(transform.position + (Vector3.up * BottomOffset), CircleRadius, GroundLayer);
+        OnWallRight = Physics2D.OverlapCircle(transform.position + (Vector3.right * RightOffset), CircleRadius, GroundLayer);
         OnWallLeft = Physics2D.OverlapCircle(transform.position - (Vector3.right * LeftOffset), CircleRadius, GroundLayer);
     }
 
     public float GetXInput()
-	{
+    {
         return Input.GetAxis("Horizontal");
     }
 
@@ -70,45 +72,59 @@ public class PlayerMove : MonoBehaviour
     }
 
     public Vector2 GetDirectionToWalk()
-	{
+    {
         return new Vector2(GetXInput(), GetYInput());
     }
 
     public float GetXVelocity()
-	{
+    {
         return RB.velocity.x;
-	}
+    }
     public float GetYVelocity()
     {
         return RB.velocity.y;
     }
 
     public void WalkInDirection(Vector2 dir)
-	{
-        RB.velocity = new Vector2(dir.x * Speed,GetVelocity().y);
-	}
+    {
+        RB.velocity = new Vector2(dir.x * Speed, GetVelocity().y);
+    }
 
     public Vector3 GetVelocity()
-	{
-       return RB.velocity;
+    {
+        return RB.velocity;
     }
 
     public void AddForce(Vector2 forces)
-	{
+    {
         RB.velocity += forces;
-	}
+    }
 
     public void Jump()
-	{
+    {
         RB.velocity += (Vector2.up * Jumpforce);
-	}
+    }
 
-	private void OnDrawGizmos()
-	{
+    public void UpdateFlip(float x)
+    {
+        if (x > .1f && _side < 0)
+        {
+            _side = 1;
+            transform.localScale = new Vector3(-1 * transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        }
+        if (x < -.1f && _side > 0)
+        {
+            _side = -1;
+            transform.localScale = new Vector3(-1 * transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
         Gizmos.color = Color.red;
 
-        Gizmos.DrawWireSphere((Vector2)transform.position + (Vector2.up * BottomOffset),CircleRadius);
-        Gizmos.DrawWireSphere((Vector2)transform.position + (Vector2.right * RightOffset),CircleRadius);
-        Gizmos.DrawWireSphere((Vector2)transform.position - (Vector2.right * LeftOffset),CircleRadius);
-	}
+        Gizmos.DrawWireSphere((Vector2)transform.position + (Vector2.up * BottomOffset), CircleRadius);
+        Gizmos.DrawWireSphere((Vector2)transform.position + (Vector2.right * RightOffset), CircleRadius);
+        Gizmos.DrawWireSphere((Vector2)transform.position - (Vector2.right * LeftOffset), CircleRadius);
+    }
 }

@@ -7,20 +7,16 @@ public class PlayerAnimation : MonoBehaviour
 
     private bool _isGrounded = false;
 
-    private void Start()
-    {
-      //  _move = GetComponent<PlayerMove>();
-     //   _anim = GetComponent<Animator>();
-    }
-
     private void Update()
     {
         _anim.SetFloat("XVelocity", _move.GetXVelocity());
         _anim.SetFloat("YVelocity", _move.GetYVelocity());
 
 
-        if(_move.OnGround && !_isGrounded)
-            _anim.SetTrigger("IsGrouned");
+        if(_move.OnGround && !_isGrounded && _move.GetYVelocity() < -0.1f)
+        {
+            _anim.SetTrigger("IsGrounded");
+        }
 
         _isGrounded = _move.OnGround;
     }

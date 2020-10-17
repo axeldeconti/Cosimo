@@ -53,5 +53,5 @@ MonoBehaviour:
   - {fileID: 7724897469082473958, guid: 3445fe4abb2f9f744bcec010f835cbb0, type: 3}
   - {fileID: 1860512317291366359, guid: 903645bae067dcd4b9a3ec3e5e9779e2, type: 3}
   - {fileID: 2582114991999831071, guid: 524d82fee92f1d54c81edbfdee0338fd, type: 3}
-  _spawnInterval: {x: 1, y: 4}
-  _destroyDistance: 90
+  _spawnInterval: {x: 2.4, y: 5}
+  _destroyDistance: 210.77

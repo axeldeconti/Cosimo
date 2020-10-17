@@ -11,6 +11,12 @@ public class Cloud : MonoBehaviour
     private void Start()
     {
         _speed = Random.Range(_speedLimits.x, _speedLimits.y);
+
+        int i = Random.Range(0, 100) >= 50 ? 1 : -1;
+        transform.localScale = new Vector3(i, 1, 1);
+
+        if (destroyPos.x == 0)
+            destroyPos = Vector3.right * 200;
     }
 
     private void Update()

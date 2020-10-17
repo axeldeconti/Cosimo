@@ -63,12 +63,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\AtmosphereSound.cs" />
     <Compile Include="Assets\Script\Cloud.cs" />
     <Compile Include="Assets\Script\CloudSpawner.cs" />
     <Compile Include="Assets\Script\Collectible\Collectible.cs" />
     <Compile Include="Assets\Script\Collectible\CollectibleUI.cs" />
     <Compile Include="Assets\Script\Collectible\CollectibleUITarget.cs" />
     <Compile Include="Assets\Script\Interactable.cs" />
+    <Compile Include="Assets\Script\LevelManager.cs" />
     <Compile Include="Assets\Script\PlateForme\BouncingPlateForme.cs" />
     <Compile Include="Assets\Script\PlateForme\EndGamePlateForme.cs" />
     <Compile Include="Assets\Script\PlateForme\FadingPlateForme.cs" />

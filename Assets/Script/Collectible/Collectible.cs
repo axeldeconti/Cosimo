@@ -5,6 +5,7 @@ public class Collectible : MonoBehaviour
 {
     [SerializeField] private GameObject _collectibleUI = null;
     [SerializeField] private Transform _collectibleParent = null;
+    [SerializeField] private Sprite _sprite = null;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -13,7 +14,7 @@ public class Collectible : MonoBehaviour
             //Player is touched
             Debug.Log("Collected");
             GameObject col = Instantiate(_collectibleUI, Camera.main.WorldToScreenPoint(transform.position), Quaternion.identity, _collectibleParent);
-            col.GetComponent<Image>().sprite = GetComponent<SpriteRenderer>().sprite;
+            col.GetComponent<Image>().sprite = _sprite;
             Destroy(gameObject);
         }
     }
