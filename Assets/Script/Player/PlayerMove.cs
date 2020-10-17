@@ -17,9 +17,15 @@ public class PlayerMove : MonoBehaviour
     public float LeftOffset;
     public float RightOffset;
 
+    public float JumpDuration;
 
     public float CircleRadius;
     public LayerMask GroundLayer;
+
+    float TimeHoldingSpace;
+
+    public float FallMultiplier;
+    public float LowJumpMultiplier;
 
     // Update is called once per frame
     void Update()
@@ -29,10 +35,23 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && OnGround)
         {
             Jump();
+            OnGround = false;
         }
-
+        BetterJump();
 
     }
+
+    public void BetterJump()
+	{
+        if(RB.velocity.y < 0)
+		{
+            RB.velocity += Vector2.up * Physics2D.gravity.y * (FallMultiplier - 1) * Time.deltaTime;
+		}
+        else if(RB.velocity.y > 0 && !Input.GetKey(KeyCode.Space))
+		{
+            RB.velocity += Vector2.up * Physics2D.gravity.y * (LowJumpMultiplier - 1) * Time.deltaTime;
+        }
+	}
 
     public void CheckCollision()
 	{
@@ -82,11 +101,8 @@ public class PlayerMove : MonoBehaviour
 
     public void Jump()
 	{
-        Vector2 Velocity= new Vector2(GetVelocity().x, 0);
-        Velocity += (Vector2.up * Jumpforce);
-        RB.velocity = Velocity;
-        OnGround = false;
-    }
+        RB.velocity += (Vector2.up * Jumpforce);
+	}
 
 	private void OnDrawGizmos()
 	{
