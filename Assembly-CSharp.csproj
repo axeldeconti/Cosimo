@@ -67,9 +67,11 @@
     <Compile Include="Assets\Script\Collectible\CollectibleUI.cs" />
     <Compile Include="Assets\Script\Collectible\CollectibleUITarget.cs" />
     <Compile Include="Assets\Script\PlateForme\BouncingPlateForme.cs" />
+    <Compile Include="Assets\Script\PlateForme\EndGamePlateForme.cs" />
     <Compile Include="Assets\Script\PlateForme\FadingPlateForme.cs" />
     <Compile Include="Assets\Script\PlateForme\FallingPlateForme.cs" />
     <Compile Include="Assets\Script\PlateForme\StickyPlateForme.cs" />
+    <Compile Include="Assets\Script\Player\PlayerAnimation.cs" />
     <Compile Include="Assets\Script\Player\PlayerMove.cs" />
     <Reference Include="UnityEngine">
       <HintPath>D:/Programs/Unity/2019.4.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -628,6 +630,12 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>D:/Utilisateur/Documents/Unity/Cosimo/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>D:/Utilisateur/Documents/Unity/Cosimo/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>D:/Utilisateur/Documents/Unity/Cosimo/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup></ItemGroup>
