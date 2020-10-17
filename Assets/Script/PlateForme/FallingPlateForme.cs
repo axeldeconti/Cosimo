@@ -10,5 +10,6 @@ public class FallingPlateForme : MonoBehaviour
 	{
 		RB.constraints = RigidbodyConstraints2D.None;
 		RB.constraints = RigidbodyConstraints2D.FreezePositionX;
+		RB.constraints = RigidbodyConstraints2D.FreezeRotation;
 	}
 }
