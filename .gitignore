@@ -1,2 +1,5 @@
 
 Library/Artifacts
+Library/PackageCache
+Temp
+obj/Debug
