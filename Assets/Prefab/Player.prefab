@@ -62,6 +62,7 @@ MonoBehaviour:
     m_Bits: 256
   FallMultiplier: 2.5
   LowJumpMultiplier: 2
+  IsLiving: 0
 --- !u!50 &8075735799305526434
 Rigidbody2D:
   serializedVersion: 4
@@ -150,6 +151,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8870752133771223967}
   - component: {fileID: 8870752133771223964}
+  - component: {fileID: 8870752131872837474}
+  - component: {fileID: 8870752131872837473}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Player
@@ -210,14 +213,47 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8faa7e9818a48a64cbbe300e68ea43a6, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.15277505, a: 1}
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &8870752131872837474
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8870752133771223966}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 05cbb7149caf8b84e81d7c228e566373, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8870752131872837473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8870752133771223966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56a431dac5a23604496f63925db0ce81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _move: {fileID: 8870752132140114901}
+  _anim: {fileID: 8870752131872837474}
