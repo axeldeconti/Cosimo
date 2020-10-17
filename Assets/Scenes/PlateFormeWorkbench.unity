@@ -645,7 +645,22 @@ PrefabInstance:
     - target: {fileID: 8870752132140114901, guid: 094c0c159d2abec49af93d64c7a73bac,
         type: 3}
       propertyPath: CircleRadius
-      value: 0.6
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8870752132140114901, guid: 094c0c159d2abec49af93d64c7a73bac,
+        type: 3}
+      propertyPath: BottomOffset
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8870752132140114901, guid: 094c0c159d2abec49af93d64c7a73bac,
+        type: 3}
+      propertyPath: LeftOffset
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 8870752132140114901, guid: 094c0c159d2abec49af93d64c7a73bac,
+        type: 3}
+      propertyPath: RightOffset
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 8870752132140114902, guid: 094c0c159d2abec49af93d64c7a73bac,
         type: 3}
