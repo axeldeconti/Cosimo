@@ -10,6 +10,13 @@ public class PlayerMove : MonoBehaviour
     public float Jumpforce;
 
     public bool OnGround;
+    public bool OnWallLeft;
+    public bool OnWallRight;
+
+    public float BottomOffset;
+    public float LeftOffset;
+    public float RightOffset;
+
 
     public float CircleRadius;
     public LayerMask GroundLayer;
@@ -27,7 +34,9 @@ public class PlayerMove : MonoBehaviour
 
     public void CheckCollision()
 	{
-        OnGround = Physics2D.OverlapCircle((Vector2)transform.position, CircleRadius,GroundLayer);
+        OnGround = Physics2D.OverlapCircle(transform.position + (Vector3.up * BottomOffset), CircleRadius,GroundLayer);
+        OnWallRight = Physics2D.OverlapCircle(transform.position + (Vector3.right * RightOffset), CircleRadius,GroundLayer);
+        OnWallLeft = Physics2D.OverlapCircle(transform.position - (Vector3.right * LeftOffset), CircleRadius, GroundLayer);
     }
 
     public float GetXInput()
@@ -42,7 +51,7 @@ public class PlayerMove : MonoBehaviour
 
     public Vector2 GetDirectionToWalk()
 	{
-        return new Vector2(GetXInput(),GetYInput());
+        return new Vector2(GetXInput(), GetYInput());
     }
 
 
@@ -63,6 +72,8 @@ public class PlayerMove : MonoBehaviour
 	{
         Gizmos.color = Color.red;
 
-        Gizmos.DrawWireSphere((Vector2)transform.position, CircleRadius);
+        Gizmos.DrawWireSphere((Vector2)transform.position + (Vector2.up * BottomOffset),CircleRadius);
+        Gizmos.DrawWireSphere((Vector2)transform.position + (Vector2.right * RightOffset),CircleRadius);
+        Gizmos.DrawWireSphere((Vector2)transform.position - (Vector2.right * LeftOffset),CircleRadius);
 	}
 }

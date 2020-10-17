@@ -10,6 +10,7 @@
 /[Ll]ogs/
 /[Mm]emoryCaptures/
 
+<<<<<<< HEAD
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
 
@@ -61,3 +62,9 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 Assets/Scenes/Scene_Tiles_Proto.unity.meta
+=======
+Library/Artifacts
+Library/PackageCache
+Temp
+obj/Debug
+>>>>>>> 049aed40bc8bb11825a85fdc0094ab5491aabe27
