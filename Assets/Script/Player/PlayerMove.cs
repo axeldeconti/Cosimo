@@ -37,7 +37,7 @@ public class PlayerMove : MonoBehaviour
                 Jump();
                 OnGround = false;
             }
-            BetterJump();s
+            BetterJump();
     }
 
     public void BetterJump()
