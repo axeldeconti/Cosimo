@@ -52,13 +52,16 @@ MonoBehaviour:
   OnGround: 0
   OnWallLeft: 0
   OnWallRight: 0
-  BottomOffset: 0
-  LeftOffset: 0
-  RightOffset: 0
-  CircleRadius: 0.6
+  BottomOffset: -0.5
+  LeftOffset: 0.35
+  RightOffset: 0.35
+  JumpDuration: 0
+  CircleRadius: 0.2
   GroundLayer:
     serializedVersion: 2
     m_Bits: 256
+  FallMultiplier: 2.5
+  LowJumpMultiplier: 2
 --- !u!50 &8075735799305526434
 Rigidbody2D:
   serializedVersion: 4
@@ -76,10 +79,10 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &8870752132228241258
 GameObject:
   m_ObjectHideFlags: 0
