@@ -27,18 +27,22 @@ public class PlayerMove : MonoBehaviour
     public float FallMultiplier;
     public float LowJumpMultiplier;
 
+    public bool IsLiving;
+
     // Update is called once per frame
     void Update()
     {
-        WalkInDirection(GetDirectionToWalk());
-        CheckCollision();
-        if (Input.GetKeyDown(KeyCode.Space) && OnGround)
+        if (IsLiving)
         {
-            Jump();
-            OnGround = false;
+            WalkInDirection(GetDirectionToWalk());
+            CheckCollision();
+            if (Input.GetKeyDown(KeyCode.Space) && OnGround)
+            {
+                Jump();
+                OnGround = false;
+            }
+            BetterJump();
         }
-        BetterJump();
-
     }
 
     public void BetterJump()
