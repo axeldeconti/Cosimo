@@ -30,6 +30,8 @@ public class PlayerMove : MonoBehaviour
         {
             Jump();
         }
+
+
     }
 
     public void CheckCollision()
@@ -57,14 +59,24 @@ public class PlayerMove : MonoBehaviour
 
     public void WalkInDirection(Vector2 dir)
 	{
-        RB.velocity = new Vector2(dir.x * Speed, RB.velocity.y);
+        RB.velocity += new Vector2(dir.x * Speed,GetVelocity().y);
 	}
 
+    public Vector3 GetVelocity()
+	{
+       return RB.velocity;
+    }
+
+    public void AddForce(Vector2 forces)
+	{
+        RB.velocity += forces;
+	}
 
     public void Jump()
 	{
-        RB.velocity = new Vector2(RB.velocity.y, 0);
-        RB.velocity += (Vector2.up * Jumpforce); 
+        Vector2 Velocity= new Vector2(GetVelocity().x, 0);
+        Velocity += (Vector2.up * Jumpforce);
+        RB.velocity = Velocity;
         OnGround = false;
     }
 
