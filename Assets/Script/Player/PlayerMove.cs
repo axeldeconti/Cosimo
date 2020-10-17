@@ -56,6 +56,14 @@ public class PlayerMove : MonoBehaviour
         return new Vector2(GetXInput(), GetYInput());
     }
 
+    public float GetXVelocity()
+	{
+        return RB.velocity.x;
+	}
+    public float GetYVelocity()
+    {
+        return RB.velocity.y;
+    }
 
     public void WalkInDirection(Vector2 dir)
 	{
