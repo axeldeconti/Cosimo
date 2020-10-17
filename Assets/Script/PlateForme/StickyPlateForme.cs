@@ -4,26 +4,32 @@ using UnityEngine;
 
 public class StickyPlateForme : MonoBehaviour
 {
-	public Rigidbody2D CurrentRB;
+	public PlayerMove player;
 	[Range(0.0f, 1.0f)]
 	public float StickyIntensity;
 
 	private void Update()
 	{
-		if(CurrentRB != null)
+		if(player != null)
 		{
-			float CurrentXVelocity = CurrentRB.velocity.x;
-			CurrentRB.velocity -= new Vector2(CurrentXVelocity * StickyIntensity,0);
+			float CurrentXVelocity = player.GetVelocity().x;
+			player.AddForce(- new Vector2(CurrentXVelocity * StickyIntensity,0));
 		}
 	}
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
-		CurrentRB = collision.gameObject.GetComponent<Rigidbody2D>();
+		if (collision.gameObject.tag == "Player")
+		{
+			player = collision.gameObject.GetComponent<PlayerMove>();
+		}
 	}
 
 	private void OnCollisionExit2D(Collision2D collision)
 	{
-		CurrentRB = null;
+		if (collision.gameObject.tag == "Player")
+		{
+			player = null;
+		}
 	}
 }
