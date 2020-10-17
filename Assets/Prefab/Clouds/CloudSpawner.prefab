@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8539444837594686344
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8539444837594686347}
+  - component: {fileID: 6539401079163285085}
+  m_Layer: 0
+  m_Name: CloudSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8539444837594686347
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8539444837594686344}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.83, y: 5.04, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6539401079163285085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8539444837594686344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15b43ec0423279b43b69ecc19aa99ed5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _boxSize: {x: 3.65, y: 2.92}
+  _cloudPrefabs:
+  - {fileID: 191357761312459175, guid: 68e44f5f7165a014b997363016d9f455, type: 3}
+  - {fileID: 3759731587985479671, guid: 7dc1dd52268fb8340ba46d869b80d69b, type: 3}
+  - {fileID: 4423466971307132849, guid: 14dd70783490a9044a96a891e5875895, type: 3}
+  - {fileID: 2053475196214606238, guid: 4cee9a30c9568d546b4a2b22c9694b2f, type: 3}
+  - {fileID: 7488712382569629085, guid: ea474483b6c7e2b43917ac3ecefcd493, type: 3}
+  - {fileID: 7724897469082473958, guid: 3445fe4abb2f9f744bcec010f835cbb0, type: 3}
+  - {fileID: 1860512317291366359, guid: 903645bae067dcd4b9a3ec3e5e9779e2, type: 3}
+  - {fileID: 2582114991999831071, guid: 524d82fee92f1d54c81edbfdee0338fd, type: 3}
+  _spawnInterval: {x: 1, y: 4}
+  _destroyDistance: 90

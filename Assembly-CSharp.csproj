@@ -63,6 +63,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\Cloud.cs" />
+    <Compile Include="Assets\Script\CloudSpawner.cs" />
     <Compile Include="Assets\Script\Collectible\Collectible.cs" />
     <Compile Include="Assets\Script\Collectible\CollectibleUI.cs" />
     <Compile Include="Assets\Script\Collectible\CollectibleUITarget.cs" />
@@ -71,6 +73,7 @@
     <Compile Include="Assets\Script\PlateForme\EndGamePlateForme.cs" />
     <Compile Include="Assets\Script\PlateForme\FadingPlateForme.cs" />
     <Compile Include="Assets\Script\PlateForme\FallingPlateForme.cs" />
+    <Compile Include="Assets\Script\PlateForme\GameOverPlateForme.cs" />
     <Compile Include="Assets\Script\PlateForme\PlateformeParent.cs" />
     <Compile Include="Assets\Script\PlateForme\StickyPlateForme.cs" />
     <Compile Include="Assets\Script\Player\PlayerAnimation.cs" />
