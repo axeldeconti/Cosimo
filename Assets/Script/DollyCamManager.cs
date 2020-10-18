@@ -7,6 +7,7 @@ public class DollyCamManager : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera _cam = null;
     [SerializeField] private float _time = 0;
     [SerializeField] private AnimationCurve _movementSpeed = null;
+    [SerializeField] private GameObject _rightEdge = null;
 
     private CinemachineTrackedDolly _dolly = null;
     private int _currentLevel = 0;
@@ -39,5 +40,8 @@ public class DollyCamManager : MonoBehaviour
         }
 
         _currentLevel = level;
+
+        if (_currentLevel == 5)
+            _rightEdge.SetActive(false);
     }
 }
