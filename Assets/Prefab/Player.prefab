@@ -62,6 +62,10 @@ MonoBehaviour:
     m_Bits: 256
   FallMultiplier: 2.5
   LowJumpMultiplier: 2
+  AsHat: 0
+  CanMove: 1
+  _anim: {fileID: 8870752131872837474}
+  _animator: {fileID: 9100000, guid: 05cbb7149caf8b84e81d7c228e566373, type: 2}
 --- !u!50 &8075735799305526434
 Rigidbody2D:
   serializedVersion: 4

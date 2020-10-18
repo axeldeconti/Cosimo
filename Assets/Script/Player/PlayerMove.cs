@@ -28,6 +28,9 @@ public class PlayerMove : MonoBehaviour
     public bool AsHat = false;
     public bool CanMove = true;
 
+    public Animator _anim;
+    public RuntimeAnimatorController _animator = null;
+
     // Update is called once per frame
     void Update()
     {
@@ -51,6 +54,7 @@ public class PlayerMove : MonoBehaviour
     public void AddHat()
 	{
         AsHat = true;
+        _anim.runtimeAnimatorController = _animator;
 	}
 
     public void EnableMove()
