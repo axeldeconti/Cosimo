@@ -82,6 +82,7 @@
     <Compile Include="Assets\Script\PlateForme\FadingPlateForme.cs" />
     <Compile Include="Assets\Script\PlateForme\FallingPlateForme.cs" />
     <Compile Include="Assets\Script\PlateForme\GameOverPlateForme.cs" />
+    <Compile Include="Assets\Script\PlateForme\HivePlateForme.cs" />
     <Compile Include="Assets\Script\PlateForme\PlateformeParent.cs" />
     <Compile Include="Assets\Script\PlateForme\StickyPlateForme.cs" />
     <Compile Include="Assets\Script\Player\PlayerAnimation.cs" />

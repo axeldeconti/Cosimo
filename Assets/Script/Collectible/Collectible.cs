@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Collectible : MonoBehaviour
@@ -6,6 +7,9 @@ public class Collectible : MonoBehaviour
     [SerializeField] private GameObject _collectibleUI = null;
     [SerializeField] private Transform _collectibleParent = null;
     [SerializeField] private Sprite _sprite = null;
+
+    [Space]
+    public UnityEvent onCollect = null;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -21,6 +25,7 @@ public class Collectible : MonoBehaviour
         Debug.Log(gameObject.name + " collected");
         GameObject col = Instantiate(_collectibleUI, Camera.main.WorldToScreenPoint(transform.position), Quaternion.identity, _collectibleParent);
         col.GetComponent<Image>().sprite = _sprite;
+        onCollect.Invoke();
         Destroy(gameObject);
     }
 }
