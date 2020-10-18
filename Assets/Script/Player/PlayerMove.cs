@@ -43,6 +43,13 @@ public class PlayerMove : MonoBehaviour
             UpdateFlip(RB.velocity.x);
     }
 
+    public void AddHat()
+	{
+        AsHat = true;
+	}
+
+
+  
     public void BetterJump()
     {
         if (RB.velocity.y < 0)
