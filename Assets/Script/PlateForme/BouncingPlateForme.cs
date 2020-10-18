@@ -16,7 +16,8 @@ public class BouncingPlateForme : MonoBehaviour
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
-		OnCollision(collision.gameObject.GetComponent<Rigidbody2D>(), collision.contacts[0].normal);
+		if(collision.collider.CompareTag("Player"))
+			OnCollision(collision.gameObject.GetComponent<Rigidbody2D>(), collision.contacts[0].normal);
 	}
 	
 }
