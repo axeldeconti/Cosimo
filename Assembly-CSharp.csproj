@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\Script\ActionOnTriggerEnter.cs" />
     <Compile Include="Assets\Script\AtmosphereSound.cs" />
+    <Compile Include="Assets\Script\Chat.cs" />
     <Compile Include="Assets\Script\Cloud.cs" />
     <Compile Include="Assets\Script\CloudSpawner.cs" />
     <Compile Include="Assets\Script\Collectible\Collectible.cs" />
