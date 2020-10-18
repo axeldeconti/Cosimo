@@ -11,6 +11,8 @@ public class Collectible : MonoBehaviour
     [Space]
     public UnityEvent onCollect = null;
 
+    public GameObject AudioSource;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -26,6 +28,7 @@ public class Collectible : MonoBehaviour
         GameObject col = Instantiate(_collectibleUI, Camera.main.WorldToScreenPoint(transform.position), Quaternion.identity, _collectibleParent);
         col.GetComponent<Image>().sprite = _sprite;
         onCollect.Invoke();
+        Instantiate(AudioSource);
         Destroy(gameObject);
     }
 }
