@@ -21,7 +21,7 @@ public class Interactable : MonoBehaviour
         if (!_isActive)
             return;
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetButtonDown("Interact"))
         {
             onInteract.Invoke();
             _isDone = true;

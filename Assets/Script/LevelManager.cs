@@ -27,6 +27,7 @@ public class LevelManager : MonoBehaviour
     public void ChangeLevel()
     {
         _currentLevel++;
-        OnLevelChange.Invoke(_currentLevel);
+
+        OnLevelChange?.Invoke(_currentLevel);
     }
 }

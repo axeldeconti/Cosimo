@@ -11,11 +11,16 @@ public class Collectible : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            //Player is touched
-            Debug.Log("Collected");
-            GameObject col = Instantiate(_collectibleUI, Camera.main.WorldToScreenPoint(transform.position), Quaternion.identity, _collectibleParent);
-            col.GetComponent<Image>().sprite = _sprite;
-            Destroy(gameObject);
+            Collect();
         }
+    }
+
+    public void Collect()
+    {
+        //Player is touched
+        Debug.Log(gameObject.name + " collected");
+        GameObject col = Instantiate(_collectibleUI, Camera.main.WorldToScreenPoint(transform.position), Quaternion.identity, _collectibleParent);
+        col.GetComponent<Image>().sprite = _sprite;
+        Destroy(gameObject);
     }
 }

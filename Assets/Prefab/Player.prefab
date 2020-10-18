@@ -52,7 +52,7 @@ MonoBehaviour:
   OnGround: 0
   OnWallLeft: 0
   OnWallRight: 0
-  BottomOffset: -3.52
+  BottomOffset: -3.09
   LeftOffset: 1.45
   RightOffset: 1.3
   JumpDuration: 0

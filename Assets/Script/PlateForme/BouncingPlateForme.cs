@@ -5,6 +5,7 @@ using UnityEngine;
 public class BouncingPlateForme : MonoBehaviour
 {
 	public float BouncingForce;
+
 	public void OnCollision(Rigidbody2D CollidingObject,Vector3 BouncingNormalSurface)
 	{
 		CollidingObject.AddForce(-BouncingNormalSurface * BouncingForce);

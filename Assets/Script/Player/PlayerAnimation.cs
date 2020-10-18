@@ -13,7 +13,7 @@ public class PlayerAnimation : MonoBehaviour
         _anim.SetFloat("YVelocity", _move.GetYVelocity());
 
 
-        if(_move.OnGround && !_isGrounded && _move.GetYVelocity() < -0.1f)
+        if(_move.OnGround && !_isGrounded && _move.GetYVelocity() < 4f)
         {
             _anim.SetTrigger("IsGrounded");
         }
