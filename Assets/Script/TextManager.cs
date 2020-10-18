@@ -18,6 +18,7 @@ public class TextManager : MonoBehaviour
 
     private bool _isOpen = false;
     private bool _hasCollectible = false;
+    private bool _canHide = true;
     private AudioSource _aSource = null;
 
     private void Start()
@@ -25,6 +26,7 @@ public class TextManager : MonoBehaviour
         _aSource = GetComponent<AudioSource>();
         _textParent.SetActive(false);
         _isOpen = false;
+        _canHide = true;
         LevelManager.instance.OnLevelChange += PlaySentence;
     }
 
@@ -33,7 +35,7 @@ public class TextManager : MonoBehaviour
         if (!_isOpen)
             return;
 
-        if (Input.GetButtonDown("Interact"))
+        if (Input.GetButtonDown("Interact") && _canHide)
         {
             Hide();
             onEndSentence.Invoke();
@@ -55,14 +57,23 @@ public class TextManager : MonoBehaviour
             _textGauche.text = _sentences[level - 1].textGauche;
             _textDroite.text = _sentences[level - 1].textDroite;
             _isOpen = true;
+            _canHide = false;
 
             _aSource.clip = _clips[UnityEngine.Random.Range(0, _clips.Length)];
             _aSource.Play();
+
+            StartCoroutine(DelayHide());
         }
         else
         {
             StartCoroutine(Delay());
         }
+    }
+
+    private IEnumerator DelayHide()
+    {
+        yield return new WaitForSeconds(1);
+        _canHide = true;
     }
 
     private IEnumerator Delay()
