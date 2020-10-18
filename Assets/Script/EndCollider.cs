@@ -30,7 +30,9 @@ public class EndCollider : MonoBehaviour
             move.DiseableMove();
             move.gameObject.SetActive(false);
 
-            onGO.Invoke();
+            TextManager.instance.SetCollectible();
+            LevelManager.instance.ChangeLevel();
+            //onGO.Invoke();
         }
     }
 }

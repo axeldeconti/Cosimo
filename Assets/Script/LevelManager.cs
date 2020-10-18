@@ -27,7 +27,7 @@ public class LevelManager : MonoBehaviour
     public void ChangeLevel()
     {
         _currentLevel++;
-
+        Debug.Log("Level Mgr : change to level " + _currentLevel);
         OnLevelChange?.Invoke(_currentLevel);
     }
 }

@@ -21,6 +21,18 @@ public class TextManager : MonoBehaviour
     private bool _canHide = true;
     private AudioSource _aSource = null;
 
+    #region Instance
+    public static TextManager instance = null;
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(this);
+    }
+    #endregion
+
     private void Start()
     {
         _aSource = GetComponent<AudioSource>();
