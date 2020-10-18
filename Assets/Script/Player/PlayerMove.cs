@@ -87,7 +87,9 @@ public class PlayerMove : MonoBehaviour
 
     public void WalkInDirection(Vector2 dir)
     {
+        if((GetXInput() > 0 && !OnWallRight) || (GetXInput() < 0 && !OnWallLeft))
         RB.velocity = new Vector2(dir.x * Speed, GetVelocity().y);
+
     }
 
     public Vector3 GetVelocity()
