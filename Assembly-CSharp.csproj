@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\ActionOnTriggerEnter.cs" />
     <Compile Include="Assets\Script\AtmosphereSound.cs" />
     <Compile Include="Assets\Script\Cloud.cs" />
     <Compile Include="Assets\Script\CloudSpawner.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="Assets\Script\PlateForme\StickyPlateForme.cs" />
     <Compile Include="Assets\Script\Player\PlayerAnimation.cs" />
     <Compile Include="Assets\Script\Player\PlayerMove.cs" />
+    <Compile Include="Assets\Script\StartMenu.cs" />
     <Compile Include="Assets\Script\TextManager.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />

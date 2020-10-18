@@ -6,9 +6,11 @@ public class GameOverPlateForme : MonoBehaviour
 {
 	public Transform restart;
 	public Transform Player;
-	private void OnTriggerEnter2D(Collider2D collision)
-	{
-		if (collision.tag == "Player")
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+		if (collision.collider.CompareTag("Player"))
 		{
 			Player.position = restart.position;
 		}
