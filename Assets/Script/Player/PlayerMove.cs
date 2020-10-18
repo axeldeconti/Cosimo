@@ -25,6 +25,7 @@ public class PlayerMove : MonoBehaviour
 
     private int _side = 1;
 
+    public bool AsHat = false;
 
     // Update is called once per frame
     void Update()
