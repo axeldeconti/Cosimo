@@ -26,21 +26,26 @@ public class PlayerMove : MonoBehaviour
     private int _side = 1;
 
     public bool AsHat = false;
+    public bool CanMove = true;
 
     // Update is called once per frame
     void Update()
     {
-        WalkInDirection(GetDirectionToWalk());
-        CheckCollision();
-        if (Input.GetKeyDown(KeyCode.Space) && OnGround)
+        if (CanMove)
         {
-            Jump();
-            OnGround = false;
-        }
-        BetterJump();
+            WalkInDirection(GetDirectionToWalk());
 
-        if (Mathf.Abs(RB.velocity.x) > 0.1f)
-            UpdateFlip(RB.velocity.x);
+            if (Input.GetKeyDown(KeyCode.Space) && OnGround)
+            {
+                Jump();
+                OnGround = false;
+            }
+            BetterJump();
+
+            if (Mathf.Abs(RB.velocity.x) > 0.1f)
+                UpdateFlip(RB.velocity.x);
+        }
+        CheckCollision();
     }
 
     public void AddHat()
@@ -48,8 +53,17 @@ public class PlayerMove : MonoBehaviour
         AsHat = true;
 	}
 
+    public void EnableMove()
+	{
+        CanMove = true;
 
+    }
   
+    public void DiseableMove()
+	{
+        CanMove = false;
+	}
+
     public void BetterJump()
     {
         if (RB.velocity.y < 0)
