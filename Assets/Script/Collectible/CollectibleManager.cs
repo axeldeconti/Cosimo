@@ -11,6 +11,9 @@ public class CollectibleManager : MonoBehaviour
 
     private void ChangeLevel(int level)
     {
+        if (level == 6)
+            return;
+
         if(transform.childCount > 1)
             Destroy(transform.GetChild(1).gameObject);
     }

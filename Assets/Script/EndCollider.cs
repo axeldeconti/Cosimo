@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EndCollider : MonoBehaviour
 {
@@ -30,7 +28,7 @@ public class EndCollider : MonoBehaviour
             move.DiseableMove();
             move.gameObject.SetActive(false);
 
-            TextManager.instance.SetCollectible();
+            //TextManager.instance.SetCollectible();
             LevelManager.instance.ChangeLevel();
             //onGO.Invoke();
         }

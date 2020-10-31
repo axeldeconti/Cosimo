@@ -40,6 +40,7 @@ public class TextManager : MonoBehaviour
         _isOpen = false;
         _canHide = true;
         LevelManager.instance.OnLevelChange += PlaySentence;
+        PlayIntro();
     }
 
     private void Update()
@@ -56,6 +57,7 @@ public class TextManager : MonoBehaviour
 
     public void PlayIntro()
     {
+        _textParent.SetActive(true);
         _textGauche.text = _intro.textGauche;
         _textDroite.text = _intro.textDroite;
         _isOpen = true;

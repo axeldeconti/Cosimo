@@ -77,8 +77,10 @@
     <Compile Include="Assets\Script\DogAndBird.cs" />
     <Compile Include="Assets\Script\DollyCamManager.cs" />
     <Compile Include="Assets\Script\EndCollider.cs" />
+    <Compile Include="Assets\Script\FonduFinDeJeu.cs" />
     <Compile Include="Assets\Script\Interactable.cs" />
     <Compile Include="Assets\Script\LevelManager.cs" />
+    <Compile Include="Assets\Script\Mongolfiere.cs" />
     <Compile Include="Assets\Script\PlateForme\BouncingPlateForme.cs" />
     <Compile Include="Assets\Script\PlateForme\EndGamePlateForme.cs" />
     <Compile Include="Assets\Script\PlateForme\FadingPlateForme.cs" />

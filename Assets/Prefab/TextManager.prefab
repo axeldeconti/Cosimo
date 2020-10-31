@@ -408,7 +408,9 @@ MonoBehaviour:
   _textGauche: {fileID: 4934325564831988240}
   _textDroite: {fileID: 627439290340841578}
   _intro:
-    textGauche: 
+    textGauche: On lit dans les livres qu'au temps jadis, un singe parti de Rome
+      pouvait arriver en Espagne sans toucher terre, rien qu'en sautant d'arbre en
+      arbre.
     textDroite: 
   _sentences:
   - textGauche: "C'est le 15 juin 1767 que C\xF4me Laverse du Rondeau, mon fr\xE8re,
@@ -458,11 +460,11 @@ MonoBehaviour:
       et s'agrippa \xE0 la corde, les pieds sur l'ancre et le corps ramass\xE9. C'est
       ainsi que nous le v\xEEmes s'envoler, entra\xEEn\xE9 par le vent, freinant
       \xE0 peine la course du ballon - et dispara\xEEtre au-dessus de la mer."
-    textDroite: "C'est ainsi que disparut C\xF4me: il ne nous accorda m\xEAme pas
+    textDroite: "C'est ainsi que disparut C\xF4me : il ne nous accorda m\xEAme pas
       la satisfaction de le ramener sur terre apr\xE8s sa mort. Sur la tombe de notre
-      famille, une st\xE8le c\xE9l\xE8bre sa m\xE9moire, avec l'inscription que voici:
-      \"C\xF4me Laverse du Rondeau/Il v\xE9cut dans les arbres/Aima toujours la terre/Monta
-      au ciel.\""
+      famille, une st\xE8le c\xE9l\xE8bre sa m\xE9moire, avec l'inscription que voici
+      : \n\"C\xF4me Laverse du Rondeau\nIl v\xE9cut dans les arbres\nAima toujours
+      la terre \nMonta au ciel.\""
   _clips:
   - {fileID: 8300000, guid: 8638a6f3de1ee7e43984421eae3057e9, type: 3}
   - {fileID: 8300000, guid: d2061e717624ec84b8c3b3f2b02cbd6d, type: 3}
