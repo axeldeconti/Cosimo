@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -31,7 +32,15 @@ public class PlayerMove : MonoBehaviour
     public Animator _anim;
     public RuntimeAnimatorController _animator = null;
 
-    // Update is called once per frame
+    [SerializeField] private float _bumpModifier = 1.5f;
+    private float _jumpForceModifier = 1f;
+
+
+    private void Start()
+    {
+        DiseableMove();
+    }
+
     void Update()
     {
         if (CanMove)
@@ -60,7 +69,6 @@ public class PlayerMove : MonoBehaviour
     public void EnableMove()
 	{
         CanMove = true;
-
     }
   
     public void DiseableMove()
@@ -130,7 +138,23 @@ public class PlayerMove : MonoBehaviour
 
     public void Jump()
     {
-        RB.velocity += (Vector2.up * Jumpforce);
+        RB.velocity += (Vector2.up * Jumpforce * _jumpForceModifier);
+    }
+
+    public void Bump()
+    {
+        StartCoroutine(BumpCoroutine());
+    }
+
+    private IEnumerator BumpCoroutine()
+    {
+        yield return new WaitForSeconds(0.1f);
+
+        _jumpForceModifier = _bumpModifier;
+
+        yield return new WaitForSeconds(0.2f);
+
+        _jumpForceModifier = 1f;
     }
 
     public void UpdateFlip(float x)

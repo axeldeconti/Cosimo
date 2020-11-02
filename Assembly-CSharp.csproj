@@ -77,6 +77,7 @@
     <Compile Include="Assets\Script\DogAndBird.cs" />
     <Compile Include="Assets\Script\DollyCamManager.cs" />
     <Compile Include="Assets\Script\EndCollider.cs" />
+    <Compile Include="Assets\Script\EndingManager.cs" />
     <Compile Include="Assets\Script\FonduFinDeJeu.cs" />
     <Compile Include="Assets\Script\Interactable.cs" />
     <Compile Include="Assets\Script\LevelManager.cs" />

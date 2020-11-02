@@ -41,6 +41,9 @@ public class TextManager : MonoBehaviour
         _canHide = true;
         LevelManager.instance.OnLevelChange += PlaySentence;
         PlayIntro();
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update()

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Mongolfiere : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class Mongolfiere : MonoBehaviour
     [SerializeField] private float _maxHeight = 0;
 
     private Vector3 _pos = Vector3.zero;
+
+    public UnityEvent onStartFly = null;
+    public UnityEvent onEndFly = null;
 
     public void Fly()
     {
@@ -32,5 +36,7 @@ public class Mongolfiere : MonoBehaviour
 
             yield return null;
         }
+
+        onEndFly.Invoke();
     }
 }

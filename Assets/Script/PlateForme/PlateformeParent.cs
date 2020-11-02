@@ -8,7 +8,7 @@ public class PlateformeParent : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
-            Instantiate(_particle, transform.position, Quaternion.identity, transform);
+            Instantiate(_particle, transform.position - Vector3.up * 0.1f, Quaternion.identity, transform);
         }
     }
 }
